@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Supervised vs Unsupervised Learning</title>
+    <style>
+    * {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+/* Black Screen Background */
+body {
+  background: rgba(0, 0, 0, 1); /* Pure black background */
+  color: rgba(255, 255, 255, 1); /* Fully bright white text */
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.9);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+nav .logo {
+  width: 60px; /* Adjustable size */
+  height: 60px;
+  border-radius: 50%; /* Makes it round */
+  object-fit: cover;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  text-align: left; /* Aligns the list items to the left */
+  padding-left: 20px; /* Adds left padding for better spacing */
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: red; /* Default color is red */
+  text-decoration: none;
+  font-size: 16px;
+  padding: 5px 10px;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: white; /* Color changes to white on hover */
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.image-container img {
+  max-width: 50%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.container.blog-content {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 20px auto;
+  width: 90%;
+  max-width: 1200px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.95);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.8);
+}
+
+h1 {
+  background-image: url("supervised-unsupervised.png"); /* Use the image as background */
+  background-size: cover; /* Cover the entire area */
+  background-position: center; /* Center the image */
+  color: red; /* Default color is red */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add shadow for readability */
+  padding: 20px; /* Add padding for spacing */
+  border-radius: 10px; /* Rounded edges */
+  transition: color 0.3s ease-in-out;
+}
+
+h1:hover {
+  color: white; /* Color changes to white on hover */
+}
+
+h2, h3 {
+  color: red; /* Default color is red */
+  transition: color 0.3s ease-in-out;
+}
+
+h2:hover, h3:hover {
+  color: white; /* Color changes to white on hover */
+}
+
+.blog-content ul {
+  text-align: left; /* Align list items to the left */
+  padding-left: 20px; /* Add left padding for spacing */
+}
+
+.blog-content ul li {
+  margin-bottom: 10px; /* Add spacing between list items */
+}
+
+.blog-content p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  text-align: justify;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .image-container img {
+    width: 100%; /* Full width for smaller screens */
+  }
+}
+
+    </style>
+  </head>
+  <body>
+    <nav>
+      <img src="3.png" class="logo" alt="Logo" />
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#portfolio">Portfolio</a></li>
+        <li><a href="index.html#blogs">Blogs</a></li>
+        <li><a href="index.html#footer">Contact</a></li>
+      </ul>
+    </nav>
+
+    </div>
+
+    <div class="container blog-content">
+      <h1>Supervised vs Unsupervised Learning</h1>
+      <p>
+        Machine learning (ML) is revolutionizing industries by enabling systems
+        to learn from data and make intelligent decisions. At the heart of
+        machine learning are two primary paradigms: supervised and unsupervised
+        learning. Understanding these paradigms is crucial for selecting the
+        right approach for a given problem. In this blog, we will explore the
+        key differences between supervised and unsupervised learning, their
+        underlying concepts, and their real-world applications.
+      </p>
+
+      <hr />
+
+      <h2>What is Supervised Learning?</h2>
+      <p>
+        Supervised learning is a type of machine learning where the model is
+        trained on a labeled dataset. Each data point in the training set
+        consists of an input and a corresponding output label. The goal is to
+        learn a mapping function that can predict the output for new, unseen
+        inputs.
+      </p>
+
+      <h3>How It Works:</h3>
+      <ol>
+        <li>
+          The model is provided with a dataset containing input-output pairs.
+        </li>
+        <li>
+          It learns the relationship between inputs and outputs during training.
+        </li>
+        <li>Once trained, the model predicts the output for new data.</li>
+      </ol>
+
+      <h3>Key Characteristics:</h3>
+      <ul>
+        <li>Requires labeled data.</li>
+        <li>Focuses on prediction tasks.</li>
+        <li>
+          Typically involves a clear objective function (e.g., minimizing
+          error).
+        </li>
+      </ul>
+
+      <h3>Examples of Supervised Learning Algorithms:</h3>
+      <ul>
+        <li>Linear Regression</li>
+        <li>Logistic Regression</li>
+        <li>Decision Trees</li>
+        <li>Support Vector Machines (SVM)</li>
+        <li>Neural Networks</li>
+      </ul>
+
+      <h3>Applications of Supervised Learning:</h3>
+      <ul>
+        <li>
+          <strong>Spam Detection</strong>: Classifying emails as spam or
+          non-spam.
+        </li>
+        <li>
+          <strong>Fraud Detection</strong>: Identifying fraudulent transactions
+          in financial data.
+        </li>
+        <li>
+          <strong>Medical Diagnosis</strong>: Predicting diseases based on
+          symptoms or medical records.
+        </li>
+        <li>
+          <strong>Speech Recognition</strong>: Converting spoken language into
+          text.
+        </li>
+        <li>
+          <strong>Customer Churn Prediction</strong>: Identifying customers
+          likely to leave a service.
+        </li>
+      </ul>
+
+      <hr />
+
+      <h2>What is Unsupervised Learning?</h2>
+      <p>
+        Unsupervised learning, unlike supervised learning, deals with unlabeled
+        data. The model's task is to uncover hidden patterns, structures, or
+        groupings in the data without explicit guidance on what to look for.
+      </p>
+
+      <h3>How It Works:</h3>
+      <ol>
+        <li>
+          The model is provided with a dataset containing only input features.
+        </li>
+        <li>
+          It identifies patterns or structures in the data without predefined
+          labels.
+        </li>
+        <li>
+          These patterns are used for tasks like clustering, dimensionality
+          reduction, or anomaly detection.
+        </li>
+      </ol>
+
+      <h3>Key Characteristics:</h3>
+      <ul>
+        <li>Works with unlabeled data.</li>
+        <li>Focuses on pattern recognition and data exploration.</li>
+        <li>Does not have a clear objective function in many cases.</li>
+      </ul>
+
+      <h3>Examples of Unsupervised Learning Algorithms:</h3>
+      <ul>
+        <li>k-Means Clustering</li>
+        <li>Hierarchical Clustering</li>
+        <li>
+          DBSCAN (Density-Based Spatial Clustering of Applications with Noise)
+        </li>
+        <li>Principal Component Analysis (PCA)</li>
+        <li>Autoencoders</li>
+      </ul>
+
+      <h3>Applications of Unsupervised Learning:</h3>
+      <ul>
+        <li>
+          <strong>Customer Segmentation</strong>: Grouping customers based on
+          purchasing behavior.
+        </li>
+        <li>
+          <strong>Market Basket Analysis</strong>: Discovering associations
+          between items in a shopping cart.
+        </li>
+        <li>
+          <strong>Anomaly Detection</strong>: Identifying unusual patterns in
+          network traffic or financial data.
+        </li>
+        <li>
+          <strong>Image Compression</strong>: Reducing image size while
+          preserving important features.
+        </li>
+        <li>
+          <strong>Topic Modeling</strong>: Extracting topics from text data.
+        </li>
+      </ul>
+
+      <hr />
+
+      <h2>Key Differences Between Supervised and Unsupervised Learning</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Aspect</th>
+            <th>Supervised Learning</th>
+            <th>Unsupervised Learning</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Data Type</td>
+            <td>Labeled data</td>
+            <td>Unlabeled data</td>
+          </tr>
+          <tr>
+            <td>Goal</td>
+            <td>Predict outcomes or classify data</td>
+            <td>Discover hidden patterns or groupings</td>
+          </tr>
+          <tr>
+            <td>Algorithms</td>
+            <td>Regression, Classification</td>
+            <td>Clustering, Dimensionality Reduction</td>
+          </tr>
+          <tr>
+            <td>Objective Function</td>
+            <td>Clearly defined (e.g., minimizing error)</td>
+            <td>Often undefined or implicit</td>
+          </tr>
+          <tr>
+            <td>Complexity</td>
+            <td>Relatively easier to evaluate performance</td>
+            <td>Harder to validate and interpret</td>
+          </tr>
+          <tr>
+            <td>Output</td>
+            <td>Predictions or classifications</td>
+            <td>Patterns, clusters, or reduced dimensions</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr />
+
+      <h2>When to Use Supervised Learning</h2>
+      <ul>
+        <li>When you have a labeled dataset.</li>
+        <li>When the problem involves prediction or classification.</li>
+        <li>
+          Examples: Predicting house prices, diagnosing diseases, detecting
+          spam.
+        </li>
+      </ul>
+
+      <h2>When to Use Unsupervised Learning</h2>
+      <ul>
+        <li>When the dataset lacks labels.</li>
+        <li>
+          When the goal is to explore the data or uncover hidden structures.
+        </li>
+        <li>
+          Examples: Segmenting customers, detecting outliers, reducing
+          dimensionality.
+        </li>
+      </ul>
+
+      <hr />
+
+      <h2>Conclusion</h2>
+      <p>
+        Supervised and unsupervised learning are two foundational pillars of
+        machine learning, each suited for specific types of problems. While
+        supervised learning excels in predictive tasks with labeled data,
+        unsupervised learning shines in uncovering hidden patterns in unlabeled
+        data. By understanding the key differences and applications of these
+        paradigms, data scientists and engineers can make informed decisions to
+        address diverse challenges in real-world scenarios.
+      </p>
+
+      <p>
+        Whether you're predicting customer churn or discovering clusters in
+        complex datasets, the choice between supervised and unsupervised
+        learning will guide your approach to solving the problem effectively.
+      </p>
+
+      <p>
+        Do you have a favorite use case for supervised or unsupervised learning?
+        Share your thoughts in the comments below!
+      </p>
+    </div>
+  </body>
+</html>

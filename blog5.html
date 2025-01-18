@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clustering Algorithms: k-means, DBSCAN, and hierarchical clustering</title>
+    <style>
+    * {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+/* Black Screen Background */
+body {
+  background: rgba(0, 0, 0, 1); /* Pure black background */
+  color: rgba(255, 255, 255, 1); /* Fully bright white text */
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.9);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+nav .logo {
+  width: 60px; /* Adjustable size */
+  height: 60px;
+  border-radius: 50%; /* Makes it round */
+  object-fit: cover;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  text-align: left; /* Aligns the list items to the left */
+  padding-left: 20px; /* Adds left padding for better spacing */
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: red; /* Default color is red */
+  text-decoration: none;
+  font-size: 16px;
+  padding: 5px 10px;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: white; /* Color changes to white on hover */
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.image-container img {
+  max-width: 50%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.container.blog-content {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 20px auto;
+  width: 90%;
+  max-width: 1200px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.95);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.8);
+}
+
+h1 {
+  background-image: url("clusters.png"); /* Use the image as background */
+  background-size: cover; /* Cover the entire area */
+  background-position: center; /* Center the image */
+  color: red; /* Default color is red */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add shadow for readability */
+  padding: 20px; /* Add padding for spacing */
+  border-radius: 10px; /* Rounded edges */
+  transition: color 0.3s ease-in-out;
+}
+
+h1:hover {
+  color: white; /* Color changes to white on hover */
+}
+
+h2, h3 {
+  color: red; /* Default color is red */
+  transition: color 0.3s ease-in-out;
+}
+
+h2:hover, h3:hover {
+  color: white; /* Color changes to white on hover */
+}
+
+.blog-content ul {
+  text-align: left; /* Align list items to the left */
+  padding-left: 20px; /* Add left padding for spacing */
+}
+
+.blog-content ul li {
+  margin-bottom: 10px; /* Add spacing between list items */
+}
+
+.blog-content p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  text-align: justify;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .image-container img {
+    width: 100%; /* Full width for smaller screens */
+  }
+}
+
+    </style>
+  </head>
+  <body>
+    <nav>
+      <img src="3.png" class="logo" alt="Logo" />
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#portfolio">Portfolio</a></li>
+        <li><a href="index.html#blogs">Blogs</a></li>
+        <li><a href="index.html#footer">Contact</a></li>
+      </ul>
+    </nav>
+
+    </div>
+
+    <div class="container blog-content">
+      <h1>
+        Clustering Algorithms: k-means, DBSCAN, and Hierarchical Clustering
+      </h1>
+      <p>
+        Clustering is a fundamental technique in unsupervised machine learning
+        that groups similar data points into clusters. It is widely used in
+        various applications, including customer segmentation, image
+        recognition, and anomaly detection. Among the most popular clustering
+        algorithms are k-means, DBSCAN, and hierarchical clustering. Each has
+        its unique strengths, weaknesses, and use cases.
+      </p>
+    </div>
+
+    <div class="container section">
+      <h2>1. k-means Clustering</h2>
+      <p>
+        k-means is one of the simplest and most widely used clustering
+        algorithms. It works by partitioning the dataset into k clusters based
+        on feature similarity. The algorithm starts by initializing k centroids
+        (one for each cluster). It then assigns each data point to the nearest
+        centroid, recalculates the centroids as the mean of the points assigned
+        to them, and repeats the process until convergence.
+      </p>
+      <div class="advantages">
+        <strong>Advantages:</strong>
+        <ul>
+          <li>Simple and efficient for large datasets.</li>
+          <li>Works well with spherical or well-separated clusters.</li>
+        </ul>
+      </div>
+      <div class="disadvantages">
+        <strong>Disadvantages:</strong>
+        <ul>
+          <li>Sensitive to the initial choice of centroids.</li>
+          <li>Requires specifying the number of clusters (k) in advance.</li>
+          <li>
+            Struggles with non-globular clusters or clusters of varying sizes
+            and densities.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container section">
+      <h2>
+        2. DBSCAN (Density-Based Spatial Clustering of Applications with Noise)
+      </h2>
+      <p>
+        DBSCAN is a density-based clustering algorithm that can discover
+        clusters of arbitrary shape. It works by grouping together points that
+        are close to each other based on a distance metric and a minimum number
+        of points. Points that are too far from any cluster are labeled as
+        noise.
+      </p>
+      <div class="advantages">
+        <strong>Advantages:</strong>
+        <ul>
+          <li>Can find clusters of arbitrary shapes.</li>
+          <li>Does not require the number of clusters to be specified.</li>
+          <li>Robust to noise and outliers.</li>
+        </ul>
+      </div>
+      <div class="disadvantages">
+        <strong>Disadvantages:</strong>
+        <ul>
+          <li>
+            Sensitive to the choice of distance metric and parameters (epsilon
+            and min_samples).
+          </li>
+          <li>Struggles with clusters of varying densities.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container section">
+      <h2>3. Hierarchical Clustering</h2>
+      <p>
+        Hierarchical clustering builds a tree-like structure called a
+        dendrogram, which represents the nested grouping of data points. There
+        are two types: agglomerative (bottom-up) and divisive (top-down). In
+        agglomerative clustering, each point starts in its own cluster, and
+        clusters are iteratively merged based on their similarity. In divisive
+        clustering, all points start in one cluster, and the algorithm
+        recursively splits the cluster into smaller ones.
+      </p>
+      <div class="advantages">
+        <strong>Advantages:</strong>
+        <ul>
+          <li>No need to specify the number of clusters.</li>
+          <li>
+            Produces a hierarchy that can be useful for understanding data
+            structure.
+          </li>
+          <li>
+            Works well with small datasets and clusters of different shapes.
+          </li>
+        </ul>
+      </div>
+      <div class="disadvantages">
+        <strong>Disadvantages:</strong>
+        <ul>
+          <li>Computationally expensive for large datasets.</li>
+          <li>Sensitive to noise and outliers.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container visual-container">
+      <h2>Visual Representation</h2>
+      <p>
+        Below is a visual representation of k-means, DBSCAN, and hierarchical
+        clustering, showing how each algorithm handles clusters differently. As
+        seen in the image, k-means identifies well-separated spherical clusters,
+        DBSCAN discovers clusters of arbitrary shapes, and hierarchical
+        clustering forms a tree structure connecting the clusters.
+      </p>
+    </div>
+    </div>
+  </body>
+</html>

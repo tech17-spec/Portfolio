@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TGN - Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        #about {
+            background-image: url('about-back.png'); /* Background image applied only to the About Section */
+            background-size: cover;
+            background-position: center;
+            padding: 50px 0;
+        }
+        #portfolio{
+            background-image: url('project-back.png');
+        }
+        #blogs{
+            background-image: url('blogs-back.png'); 
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="3.png" class="logo" alt="Logo">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Blogs</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <p>Data Scientist</p>
+                <h1>Hi, I am <br><span>Tehreem Ghulam Nabi</span></h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Hi, I’m Tehreem Ghulam Nabi, a passionate and driven student pursuing a Bachelor’s degree in Data Science. 
+                        I have a keen interest in exploring the vast world of technology and problem-solving through data.</p>
+                    <div class="tab-title">
+                        <p class="tab-links active-links" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>ML Engineer</span><br>Data-driven problem-solving specialist.</li>
+                            <li><span>Python Expert</span><br>Master of efficient Python solutions.</li>
+                            <li><span>Web Developer</span><br>Crafts dynamic and responsive websites.</li>
+                            <li><span>Data Visualizer</span><br>Transforms data into impactful insights.</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2019-2021</span><br>Secondary Education</li>
+                            <li><span>2021-2022</span><br>Intermediate</li>
+                            <li><span>2022-Current</span><br>Bsc Data Science</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2019-2021</span><br>LGGS-Lahore</li>
+                            <li><span>2021-2022</span><br>Kips-Lahore</li>
+                            <li><span>2022-Current</span><br>University of Management & Technology-Lahore</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Section -->
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Work</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="work1.png" alt="Project 1">
+                    <div class="layer">
+                        <h3>Phone Book Directory</h3>
+                        <p>A Python-based phone book directory that allows users to manage and search contact information efficiently.</p>
+                        <a href="#"></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="work2.png" alt="Project 2">
+                    <div class="layer">
+                        <h3>Handwritten Digit Recognizer</h3>
+                        <p>A neural network project for recognizing handwritten digits using the MNIST dataset.</p>
+                        <a href="#"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="work3.png" alt="Project 3">
+                    <div class="layer">
+                        <h3>Iris Flower Classification</h3>
+                        <p>A classification model for predicting iris flower species based on its features.</p>
+                        <a href="#"></a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn">See more</a>
+        </div>
+    </div>
+
+    <!-- Blogs Section -->
+    <div id="blogs">
+        <div class="container">
+            <h1 class="sub-title">Blogs</h1>
+            <div class="blog-list">
+                <div class="blog">
+                    <img src="blog1.png" alt="Blog 1">
+                    <div class="layer">
+                        <h3>Online vs. Bash Learning</h3>
+                        <p>Understand the differences between online and command-line learning approaches.</p>
+                        <a href="blog1.html"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="blog">
+                    <img src="supervised-unsupervised.png" alt="Blog 2">
+                    <div class="layer">
+                        <h3>Supervised vs. Unsupervised Learning</h3>
+                        <p> Key differences and applications.</p>
+                        <a href="blog2.html"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="blog">
+                    <img src="feature.png" alt="Blog 3">
+                    <div class="layer">
+                        <h3>Feature Engineering: Importance of selecting and transforming variables.
+                        </h3>
+                        <p>Importance of selecting and transforming variables.</p>
+                        <a href="blog3.html"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="blog">
+                    <img src="dt.png" alt="Blog 4">
+                    <div class="layer">
+                        <h3>Decision Trees and Random Forests
+                        </h3>
+                        <p>Concepts and real-world applications.</p>
+                        <a href="blog6.html"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="blog">
+                    <img src="svm.png" alt="Blog 5">
+                    <div class="layer">
+                        <h3>Support Vector Machines (SVM)
+                        </h3>
+                        <p>: Theory and implementation.</p>
+                        <a href="blog4.html"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="blog">
+                    <img src="clusters.png" alt="Blog 6">
+                    <div class="layer">
+                        <h3>Clustering Algorithms</h3>
+                        <p>k-means, DBSCAN, and hierarchical clustering.</p>
+                        <a href="blog5.html"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="blog">
+                    <img src="pca.png" alt="Blog 7">
+                    <div class="layer">
+                        <h3>Dimensionality Reduction</h3>
+                        <p>PCA, t-SNE, and UMAP for Visualization and Analysis</p>
+                        <a href="blog7.html"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="blog">
+                    <img src="rein.png" alt="Blog 8">
+                    <div class="layer">
+                        <h3>Reinforcement Learning</h3>
+                        <p>Using AI to classify images and objects within them.</p>
+                        <a href="blog8.html"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="blog">
+                    <img src="hyper.png" alt="Blog 9">
+                    <div class="layer">
+                        <h3>Hyperparameter Optimization</h3>
+                        <p> Techniques like Grid Search, Random Search, and Bayesian Optimization.</p>
+                        <a href="blog9.html"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="blog">
+                    <img src="ensemble.png" alt="Blog 10">
+                    <div class="layer">
+                        <h3>Ensemble Methods </h3>
+                        <p>Bagging, boosting, and stacking for performance improvement.
+                        </p>
+                        <a href="blog10.html"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="blog">
+                    <img src="over.png" alt="Blog 11">
+                    <div class="layer">
+                        <h3>Overfitting and Regularization
+                        </h3>
+                        <p>Techniques like dropout, L1/L2 regularization.</p>
+                        <a href="blog11.html"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="blog">
+                    <img src=".png" alt="Blog 12">
+                    <div class="layer">
+                        <h3></h3>
+                        <p></p>
+                        <a href="blog12.html"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="blog">
+                    <img src=".png" alt="Blog 13">
+                    <div class="layer">
+                        <h3></h3>
+                        <p>Using AI to classify images and objects within them.</p>
+                        <a href="blog13.html"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="blog">
+                    <img src=".png" alt="Blog 14">
+                    <div class="layer">
+                        <h3></h3>
+                        <p></p>
+                        <a href="blog14.html"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="blog">
+                    <img src=".png" alt="Blog 15">
+                    <div class="layer">
+                        <h3></h3>
+                        <p></p>
+                        <a href="blog15.html"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="blog">
+                        <img src=".png" alt="Blog 16">
+                        <div class="layer">
+                            <h3></h3>
+                            <p></p>
+                            <a href="blog16.html"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="blog">
+                        <img src=".png" alt="Blog 17">
+                        <div class="layer">
+                            <h3></h3>
+                            <p></p>
+                            <a href="blog17.html"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="blog">
+                        <img src=".png" alt="Blog 19">
+                        <div class="layer">
+                            <h3></h3>
+                            <p></p>
+                            <a href="blog19.html"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="blog">
+                        <img src=".png" alt="Blog 20">
+                        <div class="layer">
+                            <h3></h3>
+                            <p></p>
+                            <a href="blog20.html"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="blog">
+                        <img src=".png" alt="Blog 21">
+                        <div class="layer">
+                            <h3></h3>
+                            <p></p>
+                            <a href="blog21.html"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="blog">
+                        <img src=".png" alt="Blog 22">
+                        <div class="layer">
+                            <h3></h3>
+                            <p></p>
+                            <a href="blog22.html"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="blog">
+                        <img src=".png" alt="Blog 23">
+                        <div class="layer">
+                            <h3></h3>
+                            <p></p>
+                            <a href="blog23.html"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        <div class="blog">
+                            <img src=".png" alt="Blog 24">
+                            <div class="layer">
+                                <h3></h3>
+                                <p></p>
+                                <a href="blog24.html"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+             </div>
+                    </div>
+
+                </div>
+            </div>
+            <a href="#" class="btn">See more</a>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div id="footer">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Tehreem Ghulam Nabi. All Rights Reserved.</p>
+            </div>
+    </div>
+</div>
+
+    <!-- JavaScript -->
+    <script>
+        function opentab(tabname) {
+            const tablinks = document.getElementsByClassName("tab-links");
+            const tabcontents = document.getElementsByClassName("tab-contents");
+
+            for (let tablink of tablinks) {
+                tablink.classList.remove("active-links");
+            }
+            for (let tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+
+            event.currentTarget.classList.add("active-links");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+</body>
+</html>
